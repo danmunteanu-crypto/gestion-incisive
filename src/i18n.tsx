@@ -15,8 +15,8 @@ const translations = {
     },
     hero: {
       eyebrow: 'Gestion de cliniques dentaires — Québec',
-      titleA: 'Humains d’abord.',
-      titleB: 'Augmentés par l’IA.',
+      titleA: 'Retrouvez le plaisir',
+      titleB: 'd’être dentiste propriétaire',
       subtitle:
         'Gestion Incisive règle les trois problèmes que vivent les cliniques dentaires : les plans de traitement qui attendent, les téléphones qui sonnent dans le vide et les rappels qui prennent du retard. Une équipe humaine d’abord, augmentée par l’IA — au service de votre pratique.',
       ctaPrimary: 'Contactez nous',
@@ -180,8 +180,8 @@ const translations = {
     },
     hero: {
       eyebrow: 'Dental practice management — Quebec',
-      titleA: 'Human first.',
-      titleB: 'Enhanced by AI.',
+      titleA: 'Rediscover the joy',
+      titleB: 'of owning your dental practice',
       subtitle:
         'Gestion Incisive solves the three problems every dental clinic faces: treatment plans that sit waiting, phones that ring unanswered, and recall calls that fall behind. A human team first, enhanced by AI — dedicated to your practice.',
       ctaPrimary: 'Request a free consultation',

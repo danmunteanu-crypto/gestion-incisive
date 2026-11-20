@@ -418,7 +418,7 @@ button, a, input, textarea { outline-offset: 5px; }
   display: grid;
   place-items: center;
 }
-.trusted__logo img { max-width: 150px; max-height: 52px; object-fit: contain; filter: grayscale(1) brightness(0.42) contrast(1.2); opacity: 0.7; }
+.trusted__logo img { max-width: 150px; max-height: 52px; object-fit: contain; filter: none; opacity: 1; }
 @keyframes logo-marquee { to { transform: translateX(-50%); } }
 
 .services { background: var(--bg); }
