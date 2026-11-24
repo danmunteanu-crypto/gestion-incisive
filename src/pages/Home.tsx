@@ -1,15 +1,11 @@
-import { useEffect, useRef, useState, type CSSProperties, type FormEvent } from 'react'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import {
-  AlertCircle,
   ArrowDown,
   ArrowRight,
   ArrowUp,
   ArrowUpRight,
   Check,
-  CheckCircle2,
-  Loader2,
   Menu,
-  Send,
   X,
 } from 'lucide-react'
 import gsap from 'gsap'
@@ -18,8 +14,6 @@ import Lenis from 'lenis'
 import { useLang } from '@/i18n'
 
 gsap.registerPlugin(ScrollTrigger)
-
-const FORM_ENDPOINT = 'https://formsubmit.co/ajax/dan.munteanu@gmail.com'
 
 const clinicLogos = [
   { src: '/images/logo-clicdentaire.png', alt: 'Clic Dentaire' },
@@ -363,30 +357,7 @@ function Process() {
 }
 
 function Contact() {
-  const { lang, t } = useLang()
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
-
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    const form = event.currentTarget
-    setStatus('sending')
-
-    try {
-      const response = await fetch(FORM_ENDPOINT, {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: new FormData(form),
-      })
-      const result = await response.json().catch(() => null)
-      const succeeded = result?.success === true || result?.success === 'true'
-      if (!response.ok || !succeeded) throw new Error(result?.message || 'Request failed')
-      form.reset()
-      setStatus('sent')
-    } catch {
-      setStatus('error')
-    }
-  }
-
+  const { t } = useLang()
   return (
     <section className="section contact" id="contact" aria-labelledby="contact-title">
       <div className="page-shell">
@@ -403,57 +374,17 @@ function Contact() {
             </div>
           </div>
           <div className="contact__form-wrap">
-            {status === 'sent' ? (
-              <div className="form-success" role="status">
-                <CheckCircle2 aria-hidden="true" />
-                <h3>{t.contact.form.successTitle}</h3>
-                <p>{t.contact.form.success}</p>
-                <button type="button" className="button button--ghost" onClick={() => setStatus('idle')}>
-                  {t.contact.form.another}
-                  <ArrowRight aria-hidden="true" />
-                </button>
-              </div>
-            ) : (
-              <form className="contact-form" onSubmit={handleSubmit}>
-                <input type="hidden" name="_subject" value="Nouvelle demande — Gestion Incisive / New request" />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="Langue / Language" value={lang === 'fr' ? 'Français' : 'English'} />
-                <label className="form-field" htmlFor="contact-name">
-                  <span>{t.contact.form.name}</span>
-                  <input id="contact-name" name="name" type="text" autoComplete="name" required />
-                </label>
-                <label className="form-field" htmlFor="contact-clinic">
-                  <span>{t.contact.form.clinic}</span>
-                  <input id="contact-clinic" name="clinic" type="text" autoComplete="organization" />
-                </label>
-                <label className="form-field" htmlFor="contact-email">
-                  <span>{t.contact.form.email}</span>
-                  <input id="contact-email" name="email" type="email" autoComplete="email" inputMode="email" required />
-                </label>
-                <label className="form-field" htmlFor="contact-phone">
-                  <span>{t.contact.form.phone}</span>
-                  <input id="contact-phone" name="phone" type="tel" autoComplete="tel" inputMode="tel" />
-                </label>
-                <label className="form-field" htmlFor="contact-message">
-                  <span>{t.contact.form.message}</span>
-                  <textarea id="contact-message" name="message" rows={5} />
-                </label>
-                {status === 'error' && (
-                  <p className="form-error" role="alert">
-                    <AlertCircle aria-hidden="true" />
-                    <span>
-                      {t.contact.form.error}{' '}
-                      <a href="mailto:dan.munteanu@gmail.com">dan.munteanu@gmail.com</a>
-                    </span>
-                  </p>
-                )}
-                <button type="submit" className="button button--primary form-submit" disabled={status === 'sending'}>
-                  {status === 'sending' ? <Loader2 className="spinner" aria-hidden="true" /> : <Send aria-hidden="true" />}
-                  <span>{status === 'sending' ? t.contact.form.sending : t.contact.form.submit}</span>
-                </button>
-              </form>
-            )}
+            <div className="contact-start">
+              <h3>{t.contact.form.openTitle}</h3>
+              <p>{t.contact.form.openText}</p>
+              <a href="/contact.html" className="button button--primary contact-start__button">
+                <span>{t.contact.form.open}</span>
+                <ArrowUpRight aria-hidden="true" />
+              </a>
+              <a className="contact-start__email" href="mailto:dan.munteanu@gmail.com">
+                dan.munteanu@gmail.com
+              </a>
+            </div>
           </div>
         </div>
       </div>

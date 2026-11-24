@@ -148,17 +148,9 @@ const translations = {
       subtitle:
         'Réservez une consultation gratuite et sans engagement. On vous répond en dedans d’un jour ouvrable — évidemment, par un humain.',
       form: {
-        name: 'Votre nom',
-        clinic: 'Nom de la clinique',
-        email: 'Courriel',
-        phone: 'Téléphone',
-        message: 'Parlez-nous de vos besoins',
-        submit: 'Envoyer ma demande',
-        sending: 'Envoi en cours…',
-        successTitle: 'Message envoyé',
-        success: 'Merci! Votre demande a bien été envoyée. On vous recontacte très rapidement.',
-        another: 'Envoyer un autre message',
-        error: 'Une erreur est survenue. Réessayez ou écrivez-nous directement à',
+        openTitle: 'Un formulaire simple, sans distraction.',
+        openText: 'Ouvrez une page séparée pour écrire et envoyer votre demande en toute simplicité.',
+        open: 'Ouvrir le formulaire',
       },
     },
     footer: {
@@ -313,17 +305,9 @@ const translations = {
       subtitle:
         'Book a free, no-obligation consultation. We reply within one business day — by a human, of course.',
       form: {
-        name: 'Your name',
-        clinic: 'Clinic name',
-        email: 'Email',
-        phone: 'Phone',
-        message: 'Tell us about your needs',
-        submit: 'Send my request',
-        sending: 'Sending…',
-        successTitle: 'Message sent',
-        success: 'Thank you! Your request has been sent. We will get back to you very shortly.',
-        another: 'Send another message',
-        error: 'Something went wrong. Please try again or email us directly at',
+        openTitle: 'A simple form, without distractions.',
+        openText: 'Open a separate page to write and send your request with ease.',
+        open: 'Open the contact form',
       },
     },
     footer: {
