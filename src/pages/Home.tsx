@@ -402,7 +402,7 @@ function Contact() {
               <span>Montréal · Québec · FR / EN</span>
             </div>
           </div>
-          <div className="contact__form-wrap" data-reveal>
+          <div className="contact__form-wrap">
             {status === 'sent' ? (
               <div className="form-success" role="status">
                 <CheckCircle2 aria-hidden="true" />
@@ -419,29 +419,25 @@ function Contact() {
                 <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="Langue / Language" value={lang === 'fr' ? 'Français' : 'English'} />
-                <div className="form-row">
-                  <label className="form-field">
-                    <span>{t.contact.form.name}</span>
-                    <input name="Nom / Name" type="text" autoComplete="name" required />
-                  </label>
-                  <label className="form-field">
-                    <span>{t.contact.form.clinic}</span>
-                    <input name="Clinique / Clinic" type="text" autoComplete="organization" />
-                  </label>
-                </div>
-                <div className="form-row">
-                  <label className="form-field">
-                    <span>{t.contact.form.email}</span>
-                    <input name="email" type="email" autoComplete="email" required />
-                  </label>
-                  <label className="form-field">
-                    <span>{t.contact.form.phone}</span>
-                    <input name="Téléphone / Phone" type="tel" autoComplete="tel" />
-                  </label>
-                </div>
-                <label className="form-field">
+                <label className="form-field" htmlFor="contact-name">
+                  <span>{t.contact.form.name}</span>
+                  <input id="contact-name" name="name" type="text" autoComplete="name" required />
+                </label>
+                <label className="form-field" htmlFor="contact-clinic">
+                  <span>{t.contact.form.clinic}</span>
+                  <input id="contact-clinic" name="clinic" type="text" autoComplete="organization" />
+                </label>
+                <label className="form-field" htmlFor="contact-email">
+                  <span>{t.contact.form.email}</span>
+                  <input id="contact-email" name="email" type="email" autoComplete="email" inputMode="email" required />
+                </label>
+                <label className="form-field" htmlFor="contact-phone">
+                  <span>{t.contact.form.phone}</span>
+                  <input id="contact-phone" name="phone" type="tel" autoComplete="tel" inputMode="tel" />
+                </label>
+                <label className="form-field" htmlFor="contact-message">
                   <span>{t.contact.form.message}</span>
-                  <textarea name="Message" rows={5} />
+                  <textarea id="contact-message" name="message" rows={5} />
                 </label>
                 {status === 'error' && (
                   <p className="form-error" role="alert">
