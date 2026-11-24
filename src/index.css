@@ -592,32 +592,39 @@ button, a, input, textarea { outline-offset: 5px; }
 .contact__form-wrap { min-height: 520px; }
 .contact-form { padding: 40px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
 .form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-.form-field { display: block; margin-bottom: 24px; }
+.form-field { display: block; margin-bottom: 24px; cursor: text; }
 .form-field > span {
   display: block;
-  margin-bottom: 4px;
-  font-size: 10px;
+  margin-bottom: 8px;
+  font-size: 11px;
   font-weight: 680;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: transform 200ms var(--ease-out), color 200ms ease;
 }
 .form-field:focus-within > span { transform: translateX(4px); color: var(--ink-deep); }
 .form-field input, .form-field textarea {
   width: 100%;
-  min-height: 56px;
-  padding: 12px 0;
-  border: 0;
-  border-bottom: 1px solid var(--line);
-  border-radius: 0;
+  min-height: 60px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
   outline: 0;
-  background: transparent;
+  background: var(--surface-strong);
   color: var(--ink-deep);
+  caret-color: var(--ink-deep);
+  cursor: text;
   font-size: 17px;
+  line-height: 1.5;
   transition: border-color 200ms ease, background-color 200ms ease;
 }
-.form-field input:focus, .form-field textarea:focus { border-bottom-color: var(--ink-deep); }
-.form-field textarea { min-height: 140px; resize: vertical; }
+.form-field input:hover, .form-field textarea:hover { border-color: var(--ink); }
+.form-field input:focus, .form-field textarea:focus { border-color: var(--ink-deep); }
+.form-field input:focus-visible, .form-field textarea:focus-visible {
+  outline: 2px solid var(--ink-deep);
+  outline-offset: 2px;
+}
+.form-field textarea { min-height: 160px; resize: vertical; }
 .form-submit { min-width: 210px; margin-top: 8px; }
 .form-error { display: flex; gap: 10px; align-items: flex-start; margin: 0 0 20px; color: var(--error); font-size: 13px; }
 .form-error svg { width: 18px; height: 18px; flex: 0 0 auto; margin-top: 2px; }
