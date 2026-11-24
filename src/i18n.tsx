@@ -158,7 +158,7 @@ const translations = {
         successTitle: 'Message envoyé',
         success: 'Merci! Votre demande a bien été envoyée. On vous recontacte très rapidement.',
         another: 'Envoyer un autre message',
-        error: 'Une erreur est survenue. Veuillez réessayer dans un instant.',
+        error: 'Une erreur est survenue. Réessayez ou écrivez-nous directement à',
       },
     },
     footer: {
@@ -323,7 +323,7 @@ const translations = {
         successTitle: 'Message sent',
         success: 'Thank you! Your request has been sent. We will get back to you very shortly.',
         another: 'Send another message',
-        error: 'Something went wrong. Please try again in a moment.',
+        error: 'Something went wrong. Please try again or email us directly at',
       },
     },
     footer: {

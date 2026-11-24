@@ -432,7 +432,7 @@ function Contact() {
                 <div className="form-row">
                   <label className="form-field">
                     <span>{t.contact.form.email}</span>
-                    <input name="Courriel / Email" type="email" autoComplete="email" required />
+                    <input name="email" type="email" autoComplete="email" required />
                   </label>
                   <label className="form-field">
                     <span>{t.contact.form.phone}</span>
@@ -446,7 +446,10 @@ function Contact() {
                 {status === 'error' && (
                   <p className="form-error" role="alert">
                     <AlertCircle aria-hidden="true" />
-                    <span>{t.contact.form.error}</span>
+                    <span>
+                      {t.contact.form.error}{' '}
+                      <a href="mailto:dan.munteanu@gmail.com">dan.munteanu@gmail.com</a>
+                    </span>
                   </p>
                 )}
                 <button type="submit" className="button button--primary form-submit" disabled={status === 'sending'}>

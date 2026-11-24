@@ -621,6 +621,7 @@ button, a, input, textarea { outline-offset: 5px; }
 .form-submit { min-width: 210px; margin-top: 8px; }
 .form-error { display: flex; gap: 10px; align-items: flex-start; margin: 0 0 20px; color: var(--error); font-size: 13px; }
 .form-error svg { width: 18px; height: 18px; flex: 0 0 auto; margin-top: 2px; }
+.form-error a { color: inherit; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 .form-success {
   min-height: 520px;
   padding: 56px;
