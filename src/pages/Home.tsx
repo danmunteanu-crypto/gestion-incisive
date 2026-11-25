@@ -381,9 +381,6 @@ function Contact() {
                 <span>{t.contact.form.open}</span>
                 <ArrowUpRight aria-hidden="true" />
               </a>
-              <a className="contact-start__email" href="mailto:dan.munteanu@gmail.com">
-                dan.munteanu@gmail.com
-              </a>
             </div>
           </div>
         </div>

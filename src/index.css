@@ -607,16 +607,6 @@ button, a, input, textarea { outline-offset: 5px; }
 }
 .contact-start p { max-width: 500px; margin: 24px 0 32px; font-size: 17px; }
 .contact-start__button { min-height: 56px; }
-.contact-start__email {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  margin-top: 24px;
-  font-size: 14px;
-  font-weight: 650;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
 
 .footer { padding: 40px 0 28px; background: var(--ink-deep); color: var(--paper); }
 .footer__top { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
@@ -736,7 +726,6 @@ button, a, input, textarea { outline-offset: 5px; }
   .contact__intro > p { font-size: 18px; }
   .contact-start { padding: 32px 24px; }
   .contact-start__button { width: 100%; }
-  .contact-start__email { overflow-wrap: anywhere; }
   .footer { padding-top: 28px; }
   .footer__main { gap: 56px; margin-top: 80px; margin-bottom: 64px; }
   .footer__tagline { font-size: 60px; }
